@@ -1,0 +1,97 @@
+<style>
+    *{
+        background-color: burlywood;
+        font-weight: 1000;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+    }
+div,h2, h1{
+    background-color: burlywood;
+}
+.d{
+    background-color: burlywood;
+}
+table
+{
+    counter-reset: Serial;
+border-collapse: separate;
+}
+tr td:first-child:before
+{
+  counter-increment: Serial;   
+  content:  counter(Serial);
+}
+.h h1{
+        margin-left: 0%;
+        font-size: 17px;
+    }
+
+</style>
+
+<div class="h">
+    <h1 >
+        Agent's name: <%= name[0].Agent_Name%></h1>
+        <h1 >Agent's ID: <%= name[0].Agent_ID%></h1>
+       <h1> Agent's Age: <%= name[0].Age%></h1>
+        <h1>Agent's Contact: <%= name[0].Phone_no%></h1>
+    </div>
+    
+<h1 >
+   
+   
+     
+    
+    
+     <table class="table table-hover table-bordered table-striped" >  
+        <thead>  
+            <tr>  
+                <th style="border: 0.5px black solid;">S.No</th> 
+                <th style="border: 0.5px black solid;">property id</th>  
+                <th style="border: 0.5px black solid;">price for buying </th>  
+                <th style="border: 0.5px black solid;">price for renting</th>  
+                
+                
+            </tr>  
+        </thead>
+         
+         <tbody>  
+         <% print.forEach(function (available) { %>
+            
+            <tr >  
+                <td class="sno" ><%= %></td>
+                <td ><%= available.Property_ID%></td>
+                  
+                <td><%= available.Price%></td>  
+                <td><%=  available.Rent%></td>
+                
+
+               
+            </tr>  
+                                           
+         <% }) %>
+         </tbody><hr>
+    </table>
+</h1>
+<hr><hr>
+<div class="d">
+<h2>
+    Enter the below details if you have coordinated in buying or selling any property
+</h2>
+<div>
+    
+    <form class="float-child"  action="/buy" method="post">
+        <div>
+            <input type="text"  value="<%= name[0].Agent_Name %>" name="name" required>Agent's Name</div>
+            <div>
+        <input type="text" name="p_id" required>Property_id
+        <div>
+        <input type="text" name="br" required>Type "b" for bought and "r" for rented</div>
+        <div>
+            <input type="text" name="price" required>Price at buying/renting</div>
+            <div>
+                <input type="text" name="date" required>Date of deal</div>  
+            <input type="submit" value="update" onChange="this.form.submit()"  >
+       </form>
+</div>
+</div>
+

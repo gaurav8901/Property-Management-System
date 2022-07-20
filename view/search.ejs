@@ -1,0 +1,97 @@
+
+
+<style>
+    *{
+        background-color: burlywood;
+    }
+    h2 .table1,.table2,.table3{
+        display: inline-block;
+    }
+    .table1
+    {
+        margin-left: 15%;
+    }
+    h1{
+        margin-left: 30%;
+    }
+</style>
+
+
+<h1>
+    Details of available property
+</h1>
+<hr>
+<h2>
+   
+   
+     
+    
+    
+    <table class="table1" >  
+        <thead>  
+            <tr>  
+                <th  style="border: 0.5px black solid;">property id</th>
+                <th style="border: 0.5px black solid;">no of bedrooms </th>  
+                <th style="border: 0.5px black solid;">size of property</th>  
+                <th style="border: 0.5px black solid;">address</th> 
+                
+                
+            </tr>  
+        </thead>  
+         <tbody>  
+            <% print.forEach(function (Property) { %>
+                <tr>  
+                    <td><%= Property.Property_ID%></td>    
+                    <td><%= Property.No_of_Bedrooms %></td>
+                    <td><%= Property.Size %></td> 
+                    <td><%= Property.Address %></td> 
+                   
+    
+                   
+                </tr>                                   
+             <% }) %>
+         </tbody>
+    </table>
+
+
+    <table class="table2" >  
+        <thead>  
+            <tr>  
+                
+                <th style="border: 0.5px black solid;">Price</th> 
+            </tr>  
+        </thead>  
+         <tbody>  
+            <% print.forEach(function (Available) { %>
+                <tr>  
+                   
+                    <td><%= Available.Price %></td>
+    
+                   
+                </tr>                                   
+             <% }) %>
+         </tbody>
+    </table>
+
+    <table class="table3" >  
+        <thead>  
+            <tr>  
+                
+                <th style="border: 0.5px black solid;">Agent's contact number</th> 
+            </tr>  
+        </thead>  
+         <tbody>  
+            <% print.forEach(function (Agent) { %>
+                <tr>  
+                   
+                    <td><%= Agent.Phone_no %></td>
+    
+                   
+                </tr>                                   
+             <% }) %>
+         </tbody>
+    </table>
+
+    
+</h2>
+

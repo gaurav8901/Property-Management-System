@@ -1,0 +1,53 @@
+<%- include("partials/header") -%>
+<style>
+    *{
+       background-color: burlywood;
+       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       font-weight: 900;
+       font-size: large;
+    }
+    .ti,.log{
+        margin-left: 45%;
+    }
+    
+</style>
+
+<div class="ti">
+    Hello Users!!!!!!
+</div>
+<div class="log">
+    LOGIn as:
+     
+</div>
+<div class="float-container"> 
+    
+    <div>
+        <form class="float-child" action="/agent" method="post"> Admin
+            <br>
+            <label for="fname" style="background-color: coral;">Agent's name:</label>
+        <input type="text" name="admin"><br>
+        <input type="submit" value="Login as Agent" onChange="this.form.submit()" style="margin-left: 100px;" ></div>
+           </form>
+    </div>
+       <div>
+        <form class="float-child" action="/admi" method="post"> CHECK AGENT'S HISTORY<br
+            <label for="fname">Agent's name:</label>
+        <input type="text" name="admin"><br>
+        <input type="submit" value="Agent's dealings" onChange="this.form.submit()" style="margin-left: 100px;" ></div>
+           </form>
+    </div>
+    <div>
+        
+        <form class="float-child"  action="/guest" method="get" style="background-color: coral;">Guest
+            <div style="background-color: coral;">
+                <input type="submit" value="view as guest" onChange="this.form.submit()"  ></div>
+           </form>
+   </div>
+</div>
+
+
+    
+    
+  </div>
+
+<%- include("partials/footer") -%>

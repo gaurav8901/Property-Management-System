@@ -1,0 +1,17 @@
+<style>
+form{
+    margin-top: 200px;
+    margin-left: 500px;
+    width: 300px;
+    background-color: aqua;
+}
+</style>
+
+<form  action="/search" method="post" >
+    <label for="fname">Address:</label><br>
+    <input type="text" id="address" name="address" required><br>
+    <label for="fname">Max Price:</label><br>
+    <input type="text" id="price" name="price" required><br>
+    <input type="submit" value="Submit" onChange="this.form.submit()"  >
+  </form>
+

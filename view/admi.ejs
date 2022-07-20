@@ -1,0 +1,181 @@
+<style>
+    *{
+        background-color: rgb(76, 247, 247);
+    }
+    .table1,.table2,.table12,.table21{
+        display: inline-block;
+        max-width: 45%;
+    }
+    .table1{
+        max-width: 60%;
+    }
+    
+    .table12{
+        margin-left: 0%;
+      
+    }
+    h1{
+        margin-left: 30%;
+    }
+    table
+    {
+        counter-reset: Serial;
+        border-collapse: separate;
+    }
+    tr td:first-child:before
+    {
+         counter-increment: Serial;   
+        content:  counter(Serial);
+    }
+    .h h1{
+        margin-left: 0%;
+        font-size: 17px;
+    }
+
+    
+
+</style>
+
+<div class="h">
+<h1 >
+    Agent's name: <%= name[0].Agent_Name%></h1>
+    <h1 >Agent's ID: <%= name[0].Agent_ID%></h1>
+   <h1> Agent's Age: <%= name[0].Age%></h1>
+    <h1>Agent's Contact: <%= name[0].Phone_no%></h1>
+</div>
+<hr><hr>
+<h2>
+   
+    <h1> 
+        details of Properties Sold by the Agent 
+    </h1>
+     
+    
+    
+     <table class="table1" >  
+        <thead>  
+            <tr>  
+                <th style="border: 0.5px black solid;">S.No</th>
+                <th style="border: 0.5px black solid;">property id</th>  
+                <th style="border: 0.5px black solid;">Agent's id</th> 
+                <th style="border: 0.5px black solid;">no of bedrooms </th>  
+                <th style="border: 0.5px black solid;">size of property</th>  
+                <th style="border: 0.5px black solid;">address</th>
+                
+            </tr>  
+        </thead>  
+         <tbody class="t1" >  
+         <% print.forEach(function (Property) { %>
+            <tr>  
+                <td class="sno" ><%= %></td>
+                <td ><%= Property.Property_ID%></td>  
+                <td ><%= Property.Agent_ID%></td>  
+                <td ><%= Property.No_of_Bedrooms %></td>
+                <td ><%= Property.Size %></td> 
+                <td><%= Property.Address %></td> 
+                
+                 
+
+               
+            </tr>                                   
+         <% }) %>
+         </tbody>
+         
+    </table>
+
+
+    <table class="table2" >  
+        <thead>  
+            <tr>  
+                <th style="border: 0.5px black solid;">Sold Price</th>
+                <th style="border: 0.5px black solid;">Sold Date</th>
+                
+            </tr>  
+        </thead>  
+        <tbody class="t2" >  
+            <% print.forEach(function (Sold) { %>
+               <tr>  
+               
+                   <td ><%= Sold.Sold_Price %></td>
+                   <td ><%= Sold.Sold_Date %></td> 
+    
+                  
+               </tr>                                   
+            <% }) %>
+            </tbody>
+         
+    </table>
+
+    
+</h2>
+
+
+<hr>
+<h2>
+   
+   
+     
+    <h1> 
+        details of Properties Rented by the Agent 
+    </h1>
+     
+    
+    <table class="table12" >  
+       <thead>  
+           <tr>
+            <th style="border: 0.5px black solid;">S.No</th>
+               <th style="border: 0.5px black solid;">property id</th>  
+               <th style="border: 0.5px black solid;">Agent's id</th> 
+               <th style="border: 0.5px black solid;">no of bedrooms </th>  
+               <th style="border: 0.5px black solid;">size of property</th>  
+               <th style="border: 0.5px black solid;">address</th>
+               
+           </tr>  
+       </thead>  
+        <tbody  >  
+        <% prin.forEach(function (Property) { %>
+           <tr>  
+            <td ><%= %></td>
+               <td ><%= Property.Property_ID%></td>  
+               <td ><%= Property.Agent_ID%></td>  
+               <td ><%= Property.No_of_Bedrooms %></td>
+               <td ><%= Property.Size %></td> 
+               <td><%= Property.Address %></td> 
+                
+
+              
+           </tr>                                   
+        <% }) %>
+        </tbody>
+        
+   </table>
+
+
+   <table class="table2" >  
+       <thead>  
+           <tr>  
+               <th style="border: 0.5px black solid;">rented Price</th>
+               <th style="border: 0.5px black solid;">rented Start Date</th>
+               <th style="border: 0.5px black solid;">rented End Date</th>
+               
+           </tr>  
+       </thead>  
+       <tbody  >  
+           <% prin.forEach(function (rented) { %>
+              <tr>  
+                
+                  <td ><%= rented.Rent %></td>
+                  <td ><%= rented.Rent_Start_Date%></td> 
+                   <td ><%= rented.Rented_Till%></td> 
+   
+                 
+              </tr>                                   
+           <% }) %>
+           </tbody>
+        
+   </table>
+
+   
+</h2>
+
+
